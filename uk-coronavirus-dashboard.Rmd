@@ -15,7 +15,7 @@ if(!require(pacman))
   install.packages("pacman")
 
 # install.packages("devtools")
-# devtools::install_github("RamiKrispin/coronavirus", force = TRUE)
+#devtools::install_github("RamiKrispin/coronavirus", force = TRUE)
 
 pacman::p_load(
   flexdashboard,
@@ -23,6 +23,7 @@ pacman::p_load(
 )
 
 data(coronavirus)
+coronavirus::update_dataset()
 #View(coronavirus)
 # max(coronavirus$date)
 
@@ -105,7 +106,7 @@ valueBox(
     "%)",
     sep = ""
   ),
-  caption = "Deaths and rate on confirmed cases",
+  caption = "Total Deaths and death rate on confirmed cases",
   icon = "fas fa-heart-broken",
   color = death_color
 )
